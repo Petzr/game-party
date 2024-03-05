@@ -1,14 +1,11 @@
 
-import { Home } from './pages/Home';
-import { About } from './pages/About';
+
+import About from './pages/About';
 
 const AppRoutes = [
+
     {
-        index: true,
-        element: <Home />
-    },
-    {
-        path: '/voorstelling',
+        path: 'about',
         element: <About />
     },
 ]

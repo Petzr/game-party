@@ -1,13 +1,15 @@
 // import AppRoutes from './AppRoutes';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import About from './pages/About'
+
 import Home from './pages/Home'
+import AppRoutes from './AppRoutes'
 import Layout from './pages/Layout'
 import NoPage from './pages/NoPage'
 
 import './App.css';
 
 function App() {
+
   return (
     <>
     <BrowserRouter>
@@ -15,7 +17,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+
+          {AppRoutes.map((route) => {
+            return <Route path={route.path} element={route.element} />
+          })}
+
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
