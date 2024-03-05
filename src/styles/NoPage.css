@@ -1,0 +1,22 @@
+
+  .title {
+    font-size: 5em;
+    margin-bottom: 0;
+    color: #343a40;
+  }
+
+  .message {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: #6c757d;
+  }
+
+  .link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+  }
