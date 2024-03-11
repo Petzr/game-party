@@ -11,22 +11,20 @@ import './App.css';
 function App() {
 
   return (
-    <>
     <BrowserRouter>
-  
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
 
+          {/* de routes worden gemakkelijk toegevoegd door de Approutes */}
           {AppRoutes.map((route) => {
-            return <Route path={route.path} element={route.element} />
+            return <Route key={route} path={route.path} element={route.element} />
           })}
 
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
-    </>
   );
 }
 
