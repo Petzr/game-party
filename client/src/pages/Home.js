@@ -1,6 +1,6 @@
-// import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import '../styles/Home.css'
+import { useEffect, useState } from 'react';
 
 const MenuItem = ({ title, description, url, imageUrl }) => {
   return (
@@ -15,6 +15,20 @@ const MenuItem = ({ title, description, url, imageUrl }) => {
 }
 
 const Home = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('/api')
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setUsers(data.users);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+  
 
   const menuItems = [
     {
@@ -33,8 +47,10 @@ const Home = () => {
   ];
 
   return (<>
-    <div className="title">
-
+    <div className="">
+        {users.map((user, i) => {
+          return <div key={i} >{user}</div>
+        })}
     </div>
 
     <div className="menu">
