@@ -28,7 +28,7 @@ const Home = () => {
         console.error('Error fetching data:', error);
       });
   }, []);
-  
+
 
   const menuItems = [
     {
@@ -48,10 +48,12 @@ const Home = () => {
 
   return (<>
     <div className="">
-        {users.map((user, i) => {
-          return <div key={i} >{user}</div>
-        })}
+      {users.map((user, i) => {
+        return <div key={i} >{user}</div>
+      })}
     </div>
+
+    <p className='font-bold'>tailwind zit in het project</p>
 
     <div className="menu">
       {menuItems.map((item, index) => (
