@@ -1,3 +1,13 @@
+# Starting the client app
+
+The app will automaticly setup and start with the terminal command ```npm start```.
+
+# Dependencies worth noting
+
+This client app uses Tailwind CSS for styling.  
+It also uses components created by shadcn/ui. Tho this is not a depency that is installed in the project. It uses the copy-paste method given on 
+the site. Here is the link about the installation that is implemented in this project: https://ui.shadcn.com/docs/installation/manual  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -44,10 +54,6 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
 ### Analyzing the Bundle Size
 
