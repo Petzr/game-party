@@ -1,5 +1,6 @@
 import About from './pages/About';
 import ScoreBord from './pages/Scorebord';
+import Register from './pages/Register';
 import Duel from './pages/Duel';
 
 const AppRoutes = [
@@ -14,6 +15,10 @@ const AppRoutes = [
     {
         path: 'duel',
         element: <Duel />
+    },
+    {
+        path: 'register',
+        element: <Register />
     },
 ]
 
