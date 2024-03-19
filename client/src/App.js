@@ -1,12 +1,35 @@
 // import AppRoutes from './AppRoutes';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, Link, Outlet, BrowserRouter } from 'react-router-dom';
 
 import Home from './pages/Home'
 import AppRoutes from './AppRoutes'
-import Layout from './pages/Layout'
 import NoPage from './pages/NoPage'
-
 import './App.css';
+
+function Layout() {
+  return (
+    <>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <Outlet />
+      </main>
+
+      <footer>
+        vandaag is rood
+      </footer>
+    </>
+  );
+}
 
 function App() {
 
