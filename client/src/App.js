@@ -17,6 +17,15 @@ function Layout() {
           <li>
             <Link to="/about">About</Link>
           </li>
+          <li>
+            <Link to="/scorebord">scorebord</Link>
+          </li>
+          <li>
+            <Link to="/register">register</Link>
+          </li>
+          <li>
+            <Link to="/menu">menu</Link>
+          </li>
         </ul>
       </nav>
 
