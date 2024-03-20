@@ -1,5 +1,5 @@
 import * as React from "react"
-
+import $ from 'jquery';
 import { Button } from "../components/ui/button"
 import {
   Card,
@@ -20,21 +20,35 @@ import {
 } from "../components/ui/select"
 
 export default function Register() {
+
+  const buttonClickSubmit = () => {
+    let name = $('#name').val()
+    console.log(name);
+  }
+
   return (
     <Card className="w-[350px]">
       <CardHeader>
-        <CardTitle>Create project</CardTitle>
-        <CardDescription>Deploy your new project in one-click.</CardDescription>
+        <CardTitle>Maak account</CardTitle>
+        <CardDescription>Met een account kan je het spel spelen!</CardDescription>
       </CardHeader>
       <CardContent>
         <form>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Name of your project" />
+              <Label htmlFor="name">Naam</Label>
+              <Input id="name" placeholder="Naam van speler" />
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Framework</Label>
+              <Label htmlFor="age">Leeftijd</Label>
+              <Input id="age" type="number" placeholder="Jouw leeftijd" />
+            </div>
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="password">Wachtwoord</Label>
+              <Input id="password" type="password" placeholder="Wachtwoord" />
+            </div>
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="framework">framework</Label>
               <Select>
                 <SelectTrigger id="framework">
                   <SelectValue placeholder="Select" />
@@ -51,8 +65,8 @@ export default function Register() {
         </form>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
-        <Button>Deploy</Button>
+        <Button variant="outline">Annuleer</Button>
+        <Button onClick={buttonClickSubmit} >Maak</Button>
       </CardFooter>
     </Card>
   )
