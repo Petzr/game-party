@@ -18,7 +18,7 @@ export default function Home() {
       </div>
 
       <div className="mt-10 flex justify-center m-auto w-1/2">
-        <Button size="wide">Speel het spel!!</Button>
+        <Button className="" size="wide">Speel het spel!!</Button>
       </div>
 
       <About id="about"/>
