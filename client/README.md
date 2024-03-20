@@ -2,11 +2,10 @@
 
 The app will automaticly setup and start with the terminal command ```npm start```.
 
-# Dependencies worth noting
-
-This client app uses Tailwind CSS for styling.  
-It also uses components created by shadcn/ui. Tho this is not a depency that is installed in the project. It uses the copy-paste method given on 
-the site. Here is the link about the installation that is implemented in this project: https://ui.shadcn.com/docs/installation/manual  
+# Shadcn
+This project uses shadcn CLI to add component into the ui. The documentation can be found in this (link)[https://ui.shadcn.com/docs/components/accordion].  
+The components are added with CLI. After adding check the added file(s) and fix the paths, because this doesn't seem to work right. Then there is recommended to 
+add the manual styling from the docs if there are variants of the component. 
 
 # Getting Started with Create React App
 
