@@ -1,4 +1,5 @@
-import { Button } from "../components/ui/button";
+import { buttonVariants } from "../components/ui/button";
+import { Link } from "react-router-dom";
 import About from "./About";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
         <div className=" bg-gray-200 flex justify-center items-center">
           <img
             src={require("../images/party-front-page.jpg")}
-            alt="game-party-front-photo"
+            alt="game-party-header"
             className="w-full sm:h-auto lg:h-1/2"
           />
         </div>
@@ -17,8 +18,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-10 flex justify-center m-auto w-1/2">
-        <Button className="" size="wide">Speel het spel!!</Button>
+      <div className="my-10 grid gap-2 justify-center m-auto">
+        <Link to='/game' className={buttonVariants({ variant: "default", size: "wide"})}>Speel mee!</Link>
+        <Link to='/scorebord' className={buttonVariants({ variant: "outline", size: "wide"})}>Maak een spel</Link>
       </div>
 
       <About id="about"/>

@@ -1,5 +1,6 @@
 // import AppRoutes from './AppRoutes';
 import { Route, Routes, Link, Outlet, BrowserRouter } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import Home from './pages/Home'
 import AppRoutes from './AppRoutes'
@@ -15,12 +16,7 @@ import {
 } from './components/ui/dropdown-menu';
 
 function Layout() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
+  let navigate = useNavigate()
   return (
     <>
       <nav className="bg-gray-600 py-4">
@@ -37,9 +33,10 @@ function Layout() {
             <DropdownMenu>
               <DropdownMenuTrigger><i className="fa-solid fa-bars col text-white"></i></DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem><Link to="/#about" >About</Link></DropdownMenuItem>
-                <DropdownMenuItem><Link to="/scorebord" > Game</Link></DropdownMenuItem>
-                <DropdownMenuItem><Link to="/register" >Join Game</Link></DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate('/#about')}>About</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate('/game')}>Join Game</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate('/create-game')}>Create Game</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate('/register')}>Register</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -50,8 +47,15 @@ function Layout() {
         <Outlet />
       </main>
 
-      <footer>
-        vandaag is rood
+      <footer className='p-10'>
+        fakka neef dit is footer tekst ofz
+        fakka neef dit is footer tekst ofz
+        fakka neef dit is footer tekst ofz
+        fakka neef dit is footer tekst ofz
+        fakka neef dit is footer tekst ofz
+        fakka neef dit is footer tekst ofz
+        fakka neef dit is footer tekst ofz
+        fakka neef dit is footer tekst ofz
       </footer>
     </>
   );

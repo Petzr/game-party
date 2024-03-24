@@ -2,7 +2,7 @@ import About from './pages/About';
 import ScoreBord from './pages/Scorebord';
 import Register from './pages/Register';
 import Duel from './pages/Duel';
-import Menu from './pages/Menu';
+import GameMenu from './pages/GameMenu';
 
 const AppRoutes = [
     {
@@ -22,9 +22,9 @@ const AppRoutes = [
         element: <Register />
     },
     {
-        path: 'menu',
-        element: <Menu />
-    },
+        path: 'game',
+        element: <GameMenu />
+    }
 ]
 
 export default AppRoutes;
