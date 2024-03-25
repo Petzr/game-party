@@ -1,19 +1,50 @@
 // import AppRoutes from './AppRoutes';
 import { Route, Routes, Link, Outlet, BrowserRouter } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useTheme } from "next-themes"
+
 import Home from './pages/Home'
 import AppRoutes from './AppRoutes'
 import NoPage from './pages/NoPage'
 import './App.css';
+
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger
 } from './components/ui/dropdown-menu';
+import { Button } from "./components/ui/button"
+
+import { Moon, Sun, Menu } from "lucide-react"
+
+
+export function ThemeToggle() {
+  const { setTheme } = useTheme()
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="icon">
+          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <span className="sr-only">Toggle theme</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => setTheme("light")}>
+          Light
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
+          Dark
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("system")}>
+          System
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}
 
 function Layout() {
   let navigate = useNavigate()
@@ -31,7 +62,9 @@ function Layout() {
           </div>
           <div className="md:hidden">
             <DropdownMenu>
-              <DropdownMenuTrigger><i className="fa-solid fa-bars col text-white"></i></DropdownMenuTrigger>
+              <DropdownMenuTrigger>
+                <Menu className='text-white' />
+              </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem onClick={() => navigate('/#about')}>About</DropdownMenuItem>
                 <DropdownMenuItem onClick={() => navigate('/game')}>Join Game</DropdownMenuItem>
@@ -40,6 +73,7 @@ function Layout() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
+          <ThemeToggle />
         </div>
       </nav>
 
